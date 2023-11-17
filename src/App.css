@@ -160,6 +160,7 @@ margin-bottom: 1.8em;
   bottom: 0;
   right: 50%; */
   font-size: 0.6rem;
+  
 }
 
 /* == Posts Section - Filters == */
@@ -210,12 +211,14 @@ margin-bottom: 1.8em;
 /* = Posts Section - Posts - Header = */
 
 .profile{
-  background-color: palegreen;
+  /* background-color: palegreen; */
   text-align: center;
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  flex-direction: column;
 }
 .profile img{
   height: 50px;
@@ -229,7 +232,8 @@ border-radius: 50%;
   /* align-items: center; */
   flex-direction: column;
   position: relative;
-  background-color: palevioletred;
+  /* background-color: palevioletred; */
+  gap: 10px;
 }
 .edit-color {
   background-color: var(--post-color);
@@ -258,6 +262,7 @@ border-radius: 50%;
   align-items: center;
 justify-content: flex-end;
 gap: 0.4em;
+
 
 }
 
@@ -298,7 +303,11 @@ gap: 0.4em;
 
 }
 #postbody{
-  padding-left: 10px;
+  
+  padding: 5px 10px;
+  background-color:whitesmoke;
+  border-radius: var(--element-border-radius);
+  border:2px dashed var(--dark-color);
 }
 /* = Posts Section - Posts - Footer = */
 
@@ -318,7 +327,7 @@ gap: 0.4em;
 .post .footer button:hover {
     top: var(--small-button-height);
     /* box-shadow: none; */
-}
+
 
 .post .footer .edit-color {
     background-color: var(--post-color);

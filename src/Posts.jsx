@@ -156,7 +156,8 @@ export default function Post(props) {
         hours = hours < 10 ? "0" + hours : hours
         minutes = minutes < 10 ? "0" + minutes : minutes
     
-        return `${day} ${month} ${year} - ${hours}:${minutes}`
+        // return `${day} ${month} ${year} - ${hours}:${minutes}`
+        return `${day} ${month} (${hours}:${minutes})`
     }
 
     function EditPost(post){
@@ -192,7 +193,8 @@ export default function Post(props) {
                             {/* <div> */}
 
                                     <div className="profile">
-                                        
+                                    <h3 id="posteddate"> {`${displayDate(post.createdAt)}`}</h3>
+
                                         <img src={post.pic} alt="Profile picture" />
                                     
                                     </div>
@@ -219,7 +221,7 @@ export default function Post(props) {
                                     
                                         <div>
                                         <p id="postbody">{post.body}
-                                        <h3 id="posteddate"> -{`${displayDate(post.createdAt)}`}</h3>
+                                        
                                         </p>
                                         </div>
                                     
