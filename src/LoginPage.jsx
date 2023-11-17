@@ -18,7 +18,7 @@ const Navigate = useNavigate()
         signInWithPopup(auth, provider)
             .then((result) => {
                 console.log("Signed in with Google")
-                Navigate("/home")
+                Navigate("/")
             }).catch((error) => {
                 console.error(error.message)
             })
