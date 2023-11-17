@@ -1,11 +1,14 @@
 
 import React, { useState, useCallback  } from "react";
-import { Outlet } from "react-router-dom"
+import { Outlet,useNavigate } from "react-router-dom"
+
 import Header from "./Header";
 import Posts from "./Posts";
 import signout from './assets/icons/icon-sign-out.svg';
 import {signOut, onAuthStateChanged} from 'firebase/auth';
 import {app, auth} from './firebase'
+
+
 
 import emoji1 from './assets/emojis/1.png';
 import emoji2 from './assets/emojis/2.png';
@@ -36,7 +39,9 @@ export default function Home(){
     console.log(postBody)
     const [uid, setUid] = useState("");
 
-    const[gotquery,SetGotquery] = React.useState()
+    const[gotquery,SetGotquery] = React.useState();
+
+    const Navigate = useNavigate();
 
     
     
@@ -62,17 +67,37 @@ export default function Home(){
 
 
 async function addPostToDB() {
+
+    
+
+
+ 
+
    
     if (mood === 0) {
         alert("Select a mood!");
         return;
     }
     if (!uid) {
-        alert("UID is empty!");
+        alert("Let's Sign in for Better Experience!");
+        
+        auth.onAuthStateChanged(user=>{
+        
+          if(!user){
+            // console.log("user not signed in and this is workinga but lets see and do some more testing")
+            Navigate("/login")
+          
+          }else {
+            Navigate("/")
+          }
+        })
         return;
     }
 
     try {
+
+        
+
         const docRef = await addDoc(collection(db, "posts"), {
             body: postBody,
             uid: uid, 
@@ -94,6 +119,7 @@ async function addPostToDB() {
 function clearTextArea(){
     SetPostBody("")
 }
+
 function clearEmojiStyle(){
     console.log("the style is being nulled...")
     SetEmojiStyle(null)

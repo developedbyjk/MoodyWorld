@@ -16,19 +16,19 @@ function App() {
 
   
 
-  const Navigate = useNavigate()
+  // const Navigate = useNavigate()
   
-  useEffect(()=>{
-    auth.onAuthStateChanged(user=>{
+  // useEffect(()=>{
+  //   auth.onAuthStateChanged(user=>{
   
-      if(user){
-        Navigate("/home")
+  //     if(user){
+  //       Navigate("/home")
       
-      }else {
-        Navigate("/login")
-      }
-    })
-  },[])
+  //     }else {
+  //       Navigate("/login")
+  //     }
+  //   })
+  // },[])
 
   
 
@@ -43,9 +43,12 @@ function App() {
  
         <Routes>
             
-              <Route  path='/home'  element={<Home/>}>
+              {/* <Route  path='/home'  element={<Home/>}>
        
-              </Route>
+              </Route> */}
+            <Route  path='/'  element={<Home/>}>
+       
+            </Route>
            
         </Routes>
 
