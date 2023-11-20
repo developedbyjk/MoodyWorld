@@ -41,3 +41,7 @@ The web app is built using React for the frontend with custom CSS and Firebase f
 📌 The Project From Learn Firebase Course at Scrimba taught by my Teacher Rafid hoda. who gave assigmen to add more feature to it! it  was a fun Project developed  with ❤️ + 🧠 + 🐞 + ☕ . 
 
 
+## Feedback and Contributions 📢
+
+Feedback, suggestions, and contributions are welcome!😊
+
