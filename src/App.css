@@ -340,6 +340,7 @@ gap: 0.4em;
 /* === Nav === */
 
 nav {
+  
   margin: 0.6em 0;
   width: 100%;
   display: flex;
@@ -487,6 +488,7 @@ button:hover {
   cursor: pointer;
   padding: 0;
   width: 1.875em;
+  margin-top: 25px;
 }
 
 .icon-img-btn:hover {
