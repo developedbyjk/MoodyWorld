@@ -13,12 +13,15 @@ export default function Header(){
 
 
     const [user,Setuser]=React.useState({})
+        console.log(user.photoURL)
+    
     const [mood,SetMood]=React.useState(0)
-    console.log("the selected mood is " + mood);
+    // console.log("the selected mood is " + mood);
 
     React.useEffect(()=>{
         auth.onAuthStateChanged(user=>{
             console.log(user)
+
             if(user){
                 Setuser(user)
             }else {
@@ -32,14 +35,17 @@ export default function Header(){
     return(
         <>
         <MyContext.Provider value={mood}>
+          
             <div className="user-section">
-                        <img src = {user.photoURL ? user.photoURL : "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" } 
-                        
+                hey is this my url
+                        <img 
+                        src={user.photoURL ? user.photoURL : "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"} 
                         id="user-profile-picture"/>
+
                         <h2 id="user-greeting"></h2>
                     </div>
                     
-                    <div className="mood-emojis">
+                    {/* <div className="mood-emojis">
                         <button id="mood-1" className="mood-emoji-btn"  value="1" 
                         onClick={(e)=>{
                                 SetMood(e.target.value)
@@ -80,7 +86,7 @@ export default function Header(){
                             Amazing
                         </button>
                         
-                    </div>
+                    </div> */}
                     </MyContext.Provider>
            
         </>

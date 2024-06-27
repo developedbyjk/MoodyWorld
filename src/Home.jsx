@@ -29,14 +29,14 @@ export default function Home(){
 
     const [user,Setuser]=React.useState({})
     const [mood,SetMood]=React.useState(0)
-    console.log("MOOD SELECTED IS " + mood);
+    // console.log("MOOD SELECTED IS " + mood);
 
     const [emojiStyle, SetEmojiStyle] = React.useState(null);
-    console.log("emoji style is"+ emojiStyle);
+    // console.log("emoji style is"+ emojiStyle);
 
     const [postBody,SetPostBody] = React.useState("");
     const db = getFirestore(app) 
-    console.log(postBody)
+    // console.log(postBody)
     const [uid, setUid] = useState("");
 
     const[gotquery,SetGotquery] = React.useState();
@@ -145,7 +145,13 @@ function clearEmojiStyle(){
 
 
 //fethcing based on day and time!
-
+const randomEmoji = () => {
+    const emojis = [
+        "😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🤩", "🥳", "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🤭", "🤫", "🤥", "😶", "😐", "😑", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", "😪", "😵", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👹", "👺", "🤡", "💩", "👻", "💀", "☠️", "👽", "👾", "🤖", "🎃", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾"
+    ];
+    const randomIndex = Math.floor(Math.random() * emojis.length);
+    return emojis[randomIndex];
+}
 
 
 
@@ -168,7 +174,20 @@ function clearEmojiStyle(){
 
                {/* HEADER PART GOES HERE */}
             <div className="user-section">
-                <img src={user.photoURL} id="user-profile-picture" />
+
+                {
+                    user.photoURL ?
+                    <img src={user.photoURL} id="user-profile-picture" />
+                    :
+                    <div className="profilepic">
+                        <h1>{randomEmoji()}</h1>
+                    </div>
+
+                }
+
+               
+                {/* <img src={user.photoURL ? user.photoURL : randomEmoji() }  id="user-profile-picture" /> */}
+                
                 <h2 id="user-greeting">
                     Hey{" "}
                     {user.displayName != null

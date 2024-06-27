@@ -65,6 +65,10 @@ h2, h3 {
 
 }
 
+#user-profile-picture{
+  background-color: aliceblue;
+}
+
 
 /* === Sections === */
 
@@ -81,6 +85,17 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 0.8em;
+}
+
+.user-section .profilepic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75em;
+  height: 3.75em;
+  border-radius: 100%;
+  border: var(--border-width) solid var(--dark-color);
+  background-color: aliceblue;
 }
 
 .user-section img {
