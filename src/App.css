@@ -354,18 +354,26 @@ gap: 0.4em;
 
 /* === Nav === */
 
+.mynav{
+ 
+}
 nav {
-  
+  /* background-color: palegoldenrod; */
   margin: 0.6em 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+
 }
 
+#sign-out-btn img{
+  height: 1.5em;
+}
 /* === Structure === */
 
 .container {
-  max-width: var(--maximum-width);
+  /* max-width: var(--maximum-width); */
+  max-width: 320px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -519,4 +527,68 @@ button:hover {
 #logged-in-view {
   display: ;
   margin: 0;
+}
+
+
+/* CSS STYLE FOR DESKTOP VIEW */
+
+@media only screen and (min-width: 768px) {
+  body {
+    /* background-color: lightblue; */
+  }
+
+  #logged-in-view {
+    /* background-color: rebeccapurple; */
+    display: flex;
+  }
+
+  .container{
+    /* background-color: yellowgreen; */
+    max-width: 100%;
+    margin: 50px;
+  }
+
+
+  .app-container{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .desktop-view-1{
+    position: fixed;
+    width: 20%;
+    /* border-right: 1px solid var(--dark-color); */
+    /* background-color: lightcoral; */
+  }
+
+  .desktop-view-2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30%;
+    width: 70%;
+    
+  }
+
+  .post{
+    width: 400px;
+  }
+
+  .allpost{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .posts-section{
+    /* background-color: pink; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+
+
+
 }

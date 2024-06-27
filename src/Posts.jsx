@@ -182,7 +182,7 @@ export default function Post(props) {
 
     return (
         <>
-            <div className="posts">
+            <div className="allpost">
                 {posts.map((post) => (
                     <>
 
