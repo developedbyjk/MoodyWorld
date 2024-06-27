@@ -33,7 +33,7 @@ export default function Header(){
         <>
         <MyContext.Provider value={mood}>
             <div className="user-section">
-                        <img src = {user.photoURL} 
+                        <img src = {user.photoURL ? user.photoURL : "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" } 
                         
                         id="user-profile-picture"/>
                         <h2 id="user-greeting"></h2>
