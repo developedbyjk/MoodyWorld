@@ -350,7 +350,8 @@ gap: 0.4em;
 
 .post .footer .delete-color {
     background-color: var(--delete-color);
-} */
+} 
+
 
 /* === Nav === */
 
@@ -589,6 +590,22 @@ button:hover {
   }
 
 
+/* #sign-in-with-google-btn{
+  width: 100%;
+} */
 
+/* .provider-btn button{
+  display: block;
+  
+  width: 300px;
+  margin: 0 auto;
+} */
+
+#sign-in-with-google-btn{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: ;
+}
 
 }
